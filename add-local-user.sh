@@ -31,18 +31,16 @@ fi
 # Set the password
 echo $PASSWORD | passwd --stdin $USER_NAME
 
+
+# Force password change on first login.
 if [[ "${?}" -ne 0 ]]
 then 
  echo 'The password for the account could not be set.'
  exit 1
 fi
 
-# Check to see if the passwd command succeeded 
+# Force password change on first login. 
 passwd -e $USER_NAME
-
-# Force password change on first login.
-
-
 
 # Display the username, password, and the host where the user was created
 echo 

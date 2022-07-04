@@ -1,13 +1,12 @@
 #!/bin/bash
 #
 # This script creates a new user on the local system 
+#  MAke sure the script is being executed with superuser privileges
 if [[ "${UID}" -ne 0 ]]
 then
  echo 'Please run with sudo or as root.'
  exit 1
 fi
-
-#  MAke sure the script is being executed with superuser privileges
 
 # get the username (login)
 read -p 'Enter the username to create: ' USER_NAME
